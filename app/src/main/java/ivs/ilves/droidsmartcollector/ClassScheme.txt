@@ -1,0 +1,28 @@
+Collections /Plushies/ {
+    id =
+    name =
+    description =
+    ...
+
+    Groups /Lynxes, Sneps.../ {
+        *id =
+        *name =
+        *description =
+        ...
+
+        Items /Big lynx, Small snep/ {
+            *id =
+            *name =
+            *description =
+            ...
+
+            Fields /Any user created fields/ {
+                *id =
+                *name =
+                *description =
+                ....
+
+            }
+        }
+    }
+}

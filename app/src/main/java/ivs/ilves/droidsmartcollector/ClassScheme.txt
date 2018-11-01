@@ -4,11 +4,21 @@ Collections /Plushies/ {
     description =
     ...
 
+    create()
+    destroy()
+    rename()
+    move()
+
     Groups /Lynxes, Sneps.../ {
         *id =
         *name =
         *description =
         ...
+
+        *create()
+        *destroy()
+        *rename()
+        *move()
 
         Items /Big lynx, Small snep/ {
             *id =
@@ -16,13 +26,25 @@ Collections /Plushies/ {
             *description =
             ...
 
+            *create()
+            *destroy()
+            *rename()
+            *move()
+
             Fields /Any user created fields/ {
                 *id =
                 *name =
                 *description =
                 ....
 
+                *create()
+                *destroy()
+                *rename()
+                *move()
+
             }
         }
     }
 }
+
+* = inherited

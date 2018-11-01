@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DroidSmartCollector</string>
+    <string name="enter_name_and_description">Enter a name and description of your Collection:</string>
+    <string name="collection_name">Collection name</string>
+    <string name="collection_description">Collection description</string>
+    <string name="create">Create</string>
 </resources>

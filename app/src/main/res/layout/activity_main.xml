@@ -56,11 +56,16 @@
     <EditText
         android:id="@+id/collectionListField"
         android:layout_width="match_parent"
-        android:layout_height="390dp"
+        android:layout_height="238dp"
         android:ems="10"
         android:gravity="center"
         android:inputType="textMultiLine"
         android:visibility="invisible" />
+
+    <Spinner
+        android:id="@+id/selectCollection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/createCollection"

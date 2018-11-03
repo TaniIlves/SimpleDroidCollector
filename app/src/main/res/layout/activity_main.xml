@@ -8,35 +8,64 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/createNewCollectionText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint="@string/enter_name_and_description"
-        android:textSize="18sp" />
+
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/createNewCollectionText"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:hint="@string/enter_name_and_description"-->
+        <!--android:textSize="18sp" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/collectionName"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:ems="10"-->
+        <!--android:hint="@string/collection_name"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:importantForAutofill="no" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/collectionDescription"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:ems="10"-->
+        <!--android:hint="@string/collection_description"-->
+        <!--android:inputType="textMultiLine"-->
+        <!--android:importantForAutofill="no" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/sendButton"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="sendResult"-->
+        <!--android:text="@string/create" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/debugTextOut"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="286dp"-->
+        <!--android:ems="10"-->
+        <!--android:inputType="textMultiLine"-->
+        <!--android:singleLine="false"-->
+        <!--android:importantForAutofill="no" />-->
 
     <EditText
-        android:id="@+id/collectionName"
+        android:id="@+id/collectionListField"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="390dp"
         android:ems="10"
-        android:hint="@string/collection_name"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/collectionDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/collection_description"
-        android:inputType="textMultiLine" />
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:visibility="invisible" />
 
     <Button
-        android:id="@+id/sendButton"
+        android:id="@+id/createCollection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="sendResult"
-        android:text="@string/create" />
-
+        android:onClick="goToCreateNewCollection"
+        android:text="@string/create_new_collection" />
 </LinearLayout>

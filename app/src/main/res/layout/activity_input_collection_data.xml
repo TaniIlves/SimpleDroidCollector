@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.InputCollectionActivity">
+
+    <TextView
+        android:id="@+id/createNewCollectionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/enter_name_and_description"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/collectionName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/collection_name"
+        android:inputType="textPersonName"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/collectionDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/collection_description"
+        android:inputType="textMultiLine"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="sendResult"
+        android:text="@string/create" />
+
+</LinearLayout>

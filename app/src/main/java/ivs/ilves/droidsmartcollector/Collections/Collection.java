@@ -2,7 +2,7 @@ package ivs.ilves.droidsmartcollector.Collections;
 
 public class Collection {
 
-    private int collectionNumber = 0;
+    private int collectionIndex = 0;
     private String collectionID;
     private String collectionName;
     private String collectionDescription;
@@ -10,16 +10,16 @@ public class Collection {
     //
     // GETTER and SETTER area.
     //
-    public int getCollectionNumber() {
-        return collectionNumber;
+    public int getCollectionIndex() {
+        return collectionIndex;
     }
 
-    public void setCollectionNumber(int collectionIndex) {
+    public void setCollectionIndex(int collectionIndex) {
 
         //if (collectionIndex != 0) {
-            //this.collectionNumber = collectionIndex;
+        //this.collectionNumber = collectionIndex;
         //} else {
-            this.collectionNumber += 1;
+        this.collectionIndex += 1;
         //}
     }
 
@@ -30,7 +30,7 @@ public class Collection {
     public void setCollectionID(String collectionName, int collectionNumber) {
 
         //this.collectionID = collectionName.replaceAll("\\s|\\d|[,.]","");
-        this.collectionID = collectionName.replaceAll("[^A-Za-zА-Яа-я]","");
+        this.collectionID = collectionName.replaceAll("[^A-Za-zА-Яа-я]", "");
 
         this.collectionID += "00" + String.valueOf(collectionNumber);
     }
@@ -51,8 +51,6 @@ public class Collection {
         this.collectionDescription = collectionDescription;
     }
     // EOF: GETTER and SETTER area.
-
-
 
 
 }

@@ -1,4 +1,4 @@
-package ivs.ilves.droidsmartcollector.Activities;
+package ivs.ilves.droidsmartcollector.activities;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -10,10 +10,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import ivs.ilves.droidsmartcollector.Collections.Collection;
+import ivs.ilves.droidsmartcollector.collections.Collection;
 import ivs.ilves.droidsmartcollector.MainActivity;
 import ivs.ilves.droidsmartcollector.R;
-import ivs.ilves.droidsmartcollector.Tools.DBHelper;
+import ivs.ilves.droidsmartcollector.tools.DBHelper;
 
 
 public class InputCollectionActivity extends AppCompatActivity {
@@ -91,14 +91,6 @@ public class InputCollectionActivity extends AppCompatActivity {
         startActivity(intent);                                                                      // START: New Activity
 
 
-        //FileTool.writeFile(this, "collections.xml", collection.getCollectionName());
-        //FileTool.readFile(this, "collections.xml");
-
-
-//      debugTextOut.setText("New Collection: \n* ID: " + collection.getCollectionID() +
-//      "\n* Name: " + collection.getCollectionName() +
-//      "\n* Description: " + collection.getCollectionDescription() +
-//      "\n* was created");
 
         //
         // DEBUG: Output all variables values
@@ -111,3 +103,16 @@ public class InputCollectionActivity extends AppCompatActivity {
         Log.i("MyLOG.DEBUG", "CollectionDescription: " + collection.getCollectionDescription());
     }
 }
+
+
+
+
+
+//FileTool.writeFile(this, "collections.xml", collection.getCollectionName());
+//FileTool.readFile(this, "collections.xml");
+
+
+//      debugTextOut.setText("New Collection: \n* ID: " + collection.getCollectionID() +
+//      "\n* Name: " + collection.getCollectionName() +
+//      "\n* Description: " + collection.getCollectionDescription() +
+//      "\n* was created");

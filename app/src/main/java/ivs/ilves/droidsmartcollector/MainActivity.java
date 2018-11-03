@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import ivs.ilves.droidsmartcollector.Activities.InputCollectionActivity;
-import ivs.ilves.droidsmartcollector.Tools.DBHelper;
+import ivs.ilves.droidsmartcollector.activities.InputCollectionActivity;
+import ivs.ilves.droidsmartcollector.tools.DBHelper;
 
 
 public class MainActivity extends AppCompatActivity {

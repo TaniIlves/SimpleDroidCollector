@@ -1,4 +1,4 @@
-package ivs.ilves.droidsmartcollector.Tools;
+package ivs.ilves.droidsmartcollector.tools;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

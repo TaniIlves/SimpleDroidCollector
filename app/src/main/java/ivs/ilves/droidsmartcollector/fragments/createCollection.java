@@ -1,4 +1,4 @@
-package ivs.ilves.droidsmartcollector.Fragments;
+package ivs.ilves.droidsmartcollector.fragments;
 
 import android.content.Context;
 import android.net.Uri;

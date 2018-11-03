@@ -1,4 +1,4 @@
-package ivs.ilves.droidsmartcollector.Collections;
+package ivs.ilves.droidsmartcollector.collections;
 
 public class Collection {
 

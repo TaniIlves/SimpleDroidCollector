@@ -14,6 +14,11 @@ public class DBHelper extends SQLiteOpenHelper {
         super(context, "collectionDB", null, 1);
     }
 
+    /**
+     * Create new table in DB
+     *
+     * @param db DB name
+     */
     @Override
     public void onCreate(SQLiteDatabase db) {
         Log.d("MyLOG:DEBUG", "--- onCreate database ---");

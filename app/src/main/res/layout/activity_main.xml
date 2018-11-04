@@ -17,6 +17,11 @@
         android:inputType="textMultiLine"
         android:visibility="invisible" />
 
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="172dp" />
+
     <Spinner
         android:id="@+id/selectCollection"
         android:layout_width="match_parent"
@@ -28,6 +33,7 @@
         android:layout_height="wrap_content"
         android:onClick="goToCreateNewCollection"
         android:text="@string/create_new_collection" />
+
 </LinearLayout>
 
 

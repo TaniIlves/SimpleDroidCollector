@@ -6,14 +6,15 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import ivs.ilves.droidsmartcollector.collections.Collection;
 import ivs.ilves.droidsmartcollector.MainActivity;
 import ivs.ilves.droidsmartcollector.R;
+import ivs.ilves.droidsmartcollector.collections.Collection;
 import ivs.ilves.droidsmartcollector.tools.DBHelper;
+
+import static ivs.ilves.droidsmartcollector.tools.DebugTool.writeLog;
 
 
 public class InputCollectionActivity extends AppCompatActivity {
@@ -75,9 +76,9 @@ public class InputCollectionActivity extends AppCompatActivity {
         //
         try {
             long rowID = db.insert("collection", null, cv);
-            Log.d("MyLOG.DEBUG", "row inserted, ID = " + rowID);
+            writeLog('d', "row inserted, ID = " + rowID);
         } catch (SQLException e) {
-            Log.i("MyLOG.WARNING", String.valueOf(e));
+            writeLog('w', String.valueOf(e));
         }
 
         //
@@ -91,21 +92,17 @@ public class InputCollectionActivity extends AppCompatActivity {
         startActivity(intent);                                                                      // START: New Activity
 
 
-
         //
         // DEBUG: Output all variables values
         //
-        Log.i("MyLOG.DEBUG", "File path: " + getFileStreamPath(collection.getCollectionName()));
+        writeLog('d', "File path: " + getFileStreamPath(collection.getCollectionName()));
 
-        Log.i("MyLOG.DEBUG", "ClassName: " + collection.getClass());
-        Log.i("MyLOG.DEBUG", "CollectionID: " + collection.getCollectionID());
-        Log.i("MyLOG.DEBUG", "CollectionName: " + collection.getCollectionName());
-        Log.i("MyLOG.DEBUG", "CollectionDescription: " + collection.getCollectionDescription());
+        writeLog('d', "ClassName: " + collection.getClass());
+        writeLog('d', "CollectionID: " + collection.getCollectionID());
+        writeLog('d', "CollectionName: " + collection.getCollectionName());
+        writeLog('d', "CollectionDescription: " + collection.getCollectionDescription());
     }
 }
-
-
-
 
 
 //FileTool.writeFile(this, "collections.xml", collection.getCollectionName());

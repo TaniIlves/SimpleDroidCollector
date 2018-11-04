@@ -8,7 +8,22 @@ public class Collection {
     private String collectionDescription;
 
     //
-    // GETTER and SETTER area.
+    // START: Constructors area
+    //
+    public Collection() {
+
+    }
+
+    public Collection(int collectionIndex, String collectionID, String collectionName, String collectionDescription) {
+        this.collectionIndex = collectionIndex;
+        this.collectionID = collectionID;
+        this.collectionName = collectionName;
+        this.collectionDescription = collectionDescription;
+    }
+    // EOF: Constructor area
+
+    //
+    // START: Getters and Setters area
     //
     public int getCollectionIndex() {
         return collectionIndex;
@@ -50,7 +65,7 @@ public class Collection {
     public void setCollectionDescription(String collectionDescription) {
         this.collectionDescription = collectionDescription;
     }
-    // EOF: GETTER and SETTER area.
+    // EOF: Getters and Setters area
 
 
 }

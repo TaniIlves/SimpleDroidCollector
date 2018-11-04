@@ -5,10 +5,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,7 +18,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import ivs.ilves.droidsmartcollector.activities.InputCollectionActivity;
+import ivs.ilves.droidsmartcollector.adapters.CollectionAdapter;
+import ivs.ilves.droidsmartcollector.collections.Collection;
 import ivs.ilves.droidsmartcollector.tools.DBHelper;
+
+import static ivs.ilves.droidsmartcollector.tools.DebugTool.writeLog;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -45,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //
-        // Set: Cursor position at first row in query
+        // SET: Cursor position at first row in query
         //      if query haven't any rows, return False
         //
         if (cursor.moveToFirst()) {
@@ -53,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             //
             // DEFINE: Rows numbers by name in query
             //
-            int idColRowNo = cursor.getColumnIndex("indexNo");
+            int RowNoColIndex = cursor.getColumnIndex("indexNo");
             int idColIndex = cursor.getColumnIndex("id");
             int nameColIndex = cursor.getColumnIndex("name");
             int descriptionColIndex = cursor.getColumnIndex("description");
@@ -62,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
             ArrayList<String> collectionName = new ArrayList<>();
 
+            ArrayList<Collection> collectionItems = new ArrayList<>();
+
             int i = 1;
             collectionName.add(0, "Select collection");
 
@@ -69,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 //
                 // GET: Values by column numbers and put all to variables
                 //
-                allTableRows += "\nRowNo = " + cursor.getString(idColRowNo) +
+                allTableRows += "\nRowNo = " + cursor.getString(RowNoColIndex) +
                         ", \nID = " + cursor.getString(idColIndex) +
                         ", \nName = " + cursor.getString(nameColIndex) +
                         ", \nDescription = " + cursor.getString(descriptionColIndex) +
@@ -82,7 +90,12 @@ public class MainActivity extends AppCompatActivity {
                 collectionName.add(i, cursor.getString(nameColIndex));
 
 
-                Log.d("MyLOG.DEBUG", "Row " + i + " = " + collectionName.get(i));
+                //
+                // ADD: New objects to List
+                //
+                collectionItems.add(new Collection(i, cursor.getString(idColIndex), cursor.getString(nameColIndex), cursor.getString(descriptionColIndex)));
+
+                writeLog('d', "Row " + i + " = " + collectionName.get(i));
 
                 i++;
 
@@ -117,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
             //spinner.setPrompt("Select collection");
 
             //
-            // Select 0 element
+            // SELECT: 0 element
             //
             //spinner.setSelection(0);
 
@@ -156,8 +169,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+
+            //
+            // CREATE: Adapter for ListView
+            //
+            ListView listView = findViewById(R.id.listView);
+            CollectionAdapter listViewAdapter = new CollectionAdapter(this, collectionItems);
+            listView.setAdapter(listViewAdapter);
+
+
         } else {
-            Log.d("MyLOG.DEBUG", "0 rows");
+            writeLog('d', "0 rows");
         }
 
         cursor.close();
@@ -170,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Initiate a new Activity.
+     * INITIATE: New Activity.
      *
      * @param view View
      */
@@ -180,5 +202,37 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);                                                                      // START: New Activity
 
     }
+
+    //
+    // START: Menu methods Area
+    //
+
+    /**
+     * CREATE: Main menu
+     *
+     * @param menu Name of main Menu
+     * @return Result of create (true)
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+
+        return true;
+    }
+
+
+    /**
+     * CREATE: Clickable Item Settings of menu
+     *
+     * @param item
+     */
+    public void onSettings(MenuItem item) {
+
+        Toast.makeText(this, "There are no settings yet", Toast.LENGTH_LONG).show();
+
+    }
+
+    // EOF: Menu methods Area
 }
 
